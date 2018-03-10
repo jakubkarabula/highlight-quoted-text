@@ -8,7 +8,7 @@ import { PrepareTextService } from './prepare-text.service';
 export class HighlightDirective implements AfterViewInit, OnChanges {
 
   @Input() searchTerm: string;
-  @Input() caseSensitive?: string;
+  @Input() caseSensitive = 'sensitive';
 
   textBeforeMarkdown: string;
 
