@@ -7,8 +7,13 @@ describe('highlight-quoted-text App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('Highlight The Most Quoted Text');
+  });
+
+  it('should display markdown', () => {
+    page.navigateTo();
+    expect(page.getMarkdown()).toEqual('That wonderful Person of Sparta');
   });
 });
