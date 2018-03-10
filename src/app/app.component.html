@@ -3,7 +3,7 @@
     <span>Highlight The Most Quoted Text</span>
   </mat-toolbar-row>
 </mat-toolbar>
-<main>
+<main class="mat-typography">
   <mat-card class="settings">
     <mat-card-title>Settings</mat-card-title>
     <mat-card-content>
@@ -25,10 +25,10 @@
   <mat-card>
     <mat-card-title>Articles</mat-card-title>
     <mat-card-content>
-      <h2 class="mat-h2">
+      <h2>
         Simple example:
       </h2>
-      <article appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive" class="mat-body-1">
+      <article appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive">
         <p>
           There was an Old Lady of Prague,
           Whose language was horribly vague;
@@ -51,10 +51,10 @@
           That incipient Old Man at a casement
         </p>
       </article>
-      <h2 class="mat-h2">
+      <h2>
         More complex example:
       </h2>
-      <article  appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive" class="mat-body-1">
+      <article  appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive">
         This is an example text at the top of the parent node, not wrapped by other tag.
         <p>
           <span>
