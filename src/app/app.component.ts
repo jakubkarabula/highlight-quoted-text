@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  searchTerm = 'That wonderful Person of Sparta';
+  caseSensitive = 'sensitive';
+
+  testText = 'I am a variable from component\'s class';
 }

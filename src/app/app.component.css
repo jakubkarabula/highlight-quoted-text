@@ -1,0 +1,26 @@
+main, mat-toolbar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+mat-toolbar mat-toolbar-row {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0;
+}
+
+main .quoted-text {
+  width: 50%;
+}
+
+main mat-card {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.settings .field {
+  margin-right: 15px;
+}

@@ -1,20 +1,76 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Highlight The Most Quoted Text</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main>
+  <mat-card class="settings">
+    <mat-card-title>Settings</mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="quoted-text field">
+        <input
+          matInput
+          placeholder="The most quoted text"
+          [(ngModel)]="searchTerm"
+        >
+      </mat-form-field>
+      <br/>
+      <mat-radio-group [(ngModel)]="caseSensitive">
+        <mat-radio-button value="sensitive" name="case-sensitive" class="field">Case sensitive</mat-radio-button>
+        <mat-radio-button value="insensitive" name="case-sensitive" class="field">Case insensitive</mat-radio-button>
+      </mat-radio-group>
+    </mat-card-content>
+  </mat-card>
 
+  <mat-card>
+    <mat-card-title>Articles</mat-card-title>
+    <mat-card-content>
+      <h2 class="mat-h2">
+        Simple example:
+      </h2>
+      <article appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive" class="mat-body-1">
+        <p>
+          There was an Old Lady of Prague,
+          Whose language was horribly vague;
+          When they said, &#39;Are these caps?&#39;
+          She answered, &#39;Perhaps!&#39;
+          That oracular Lady of Prague.
+        </p>
+        <p>
+          There was an Old Person of Sparta,
+          Who had twenty-one sons and one &#39;darter&#39;;
+          He fed them on snails,
+          And weighed them in scales,
+          That wonderful Person of Sparta.
+        </p>
+        <p>
+          There was an Old Man at a casement,
+          Who held up his hands in amazement;
+          When they said, &#39;Sir, you&#39;ll fall!&#39;
+          He replied, &#39;Not at all!&#39;
+          That incipient Old Man at a casement
+        </p>
+      </article>
+      <h2 class="mat-h2">
+        More complex example:
+      </h2>
+      <article  appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive" class="mat-body-1">
+        This is an example text at the top of the parent node, not wrapped by other tag.
+        <p>
+          <span>
+            This is text in a nested node.
+          </span>
+        </p>
+        <p>
+          This is text within simple p tag.
+        </p>
+        {{ testText }}
+        <pre>
+          This is text in
+          pre tag.
+        </pre>
+        This is text at the end of the parent node, not wrapped by other tag.
+      </article>
+    </mat-card-content>
+  </mat-card>
+</main>

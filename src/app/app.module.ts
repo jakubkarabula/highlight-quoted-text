@@ -1,18 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import {
+  MatInputModule,
+  MatCardModule,
+  MatRadioModule,
+  MatToolbarModule,
+} from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HiglightModule } from './higlight/higlight.module';
 
 import { AppComponent } from './app.component';
 
-
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatRadioModule,
+    MatToolbarModule,
+    HiglightModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
