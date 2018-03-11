@@ -6,7 +6,7 @@ export class PrepareTextService {
 
   constructor() { }
 
-  public escape = (text: string) => {
+  public escape = (text: string): string => {
     return escapeRegExp(text).split(' ').join('\\s+');
   }
 
@@ -17,7 +17,7 @@ export class PrepareTextService {
     return new RegExp(`(^|>)([^<]*)(${searchTerm})([^>]*)(<|$)`, regExpParams);
   }
 
-  public findTextWithinElRegex = (text: string, regExpParams: string) => {
+  public findTextWithinElRegex = (text: string, regExpParams: string): RegExp => {
     const searchTerm = this.escape(text);
 
     return new RegExp(`(${searchTerm})`, regExpParams);

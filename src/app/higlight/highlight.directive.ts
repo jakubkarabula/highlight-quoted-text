@@ -16,7 +16,7 @@ export class HighlightDirective implements AfterViewInit, OnChanges {
 
   constructor(private el: ElementRef, private prepareTextService: PrepareTextService) { }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.performHighlight();
   }
 
@@ -26,7 +26,7 @@ export class HighlightDirective implements AfterViewInit, OnChanges {
     }
   }
 
-  performHighlight() {
+  performHighlight(): void {
     const article = this.el.nativeElement;
     const html = article.innerHTML;
     if (!this.textBeforeMarkdown) {

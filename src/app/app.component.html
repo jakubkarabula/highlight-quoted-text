@@ -7,18 +7,21 @@
   <mat-card class="settings">
     <mat-card-title>Settings</mat-card-title>
     <mat-card-content>
-      <mat-form-field class="quoted-text field">
-        <input
-          matInput
-          placeholder="The most quoted text"
-          [(ngModel)]="searchTerm"
-        >
-      </mat-form-field>
-      <br/>
-      <mat-radio-group [(ngModel)]="caseSensitive">
-        <mat-radio-button value="sensitive" name="case-sensitive" class="field">Case sensitive</mat-radio-button>
-        <mat-radio-button value="insensitive" name="case-sensitive" class="field">Case insensitive</mat-radio-button>
-      </mat-radio-group>
+      <form>
+        <mat-form-field class="quoted-text field">
+          <input
+            name="search-term"
+            matInput
+            placeholder="The most quoted text"
+            [(ngModel)]="formData.searchTerm"
+          >
+        </mat-form-field>
+        <br/>
+        <mat-radio-group [(ngModel)]="formData.caseSensitive" name="case-sensitive">
+          <mat-radio-button value="sensitive" name="case-sensitive" class="field">Case sensitive</mat-radio-button>
+          <mat-radio-button value="insensitive" name="case-sensitive" class="field">Case insensitive</mat-radio-button>
+        </mat-radio-group>
+      </form>
     </mat-card-content>
   </mat-card>
 
@@ -28,7 +31,7 @@
       <h2>
         Simple example:
       </h2>
-      <article appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive">
+      <article appHighlight [searchTerm]="formData.searchTerm" [caseSensitive]="formData.caseSensitive">
         <p>
           There was an Old Lady of Prague,
           Whose language was horribly vague;
@@ -54,7 +57,7 @@
       <h2>
         More complex example:
       </h2>
-      <article  appHighlight [searchTerm]="searchTerm" [caseSensitive]="caseSensitive">
+      <article  appHighlight [searchTerm]="formData.searchTerm" [caseSensitive]="formData.caseSensitive">
         This is an example text at the top of the parent node, not wrapped by other tag.
         <p>
           <span>
