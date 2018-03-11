@@ -30,10 +30,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have a variable searchTerm`, async(() => {
+  it(`should have a variable searchTerm in formData variable`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.searchTerm).toEqual('That wonderful Person of Sparta');
+    expect(app.formData.searchTerm).toEqual('That wonderful Person of Sparta');
   }));
 
   it('should have an article', async(() => {
